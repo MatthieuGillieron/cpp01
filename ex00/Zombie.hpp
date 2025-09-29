@@ -14,7 +14,7 @@ class Zombie {
 
 	void	announce(void);
 
-	Zombie(void);
+	Zombie(std::string name);
 	~Zombie(void);
 
 };
