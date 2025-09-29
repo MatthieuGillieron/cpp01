@@ -6,14 +6,14 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:03:58 by mg                #+#    #+#             */
-/*   Updated: 2025/09/29 14:57:50 by mg               ###   ########.fr       */
+/*   Updated: 2025/09/29 14:59:50 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie(void) : name("unamed") {}
+Zombie::Zombie(void) : name("Unnamed") {}
 Zombie::Zombie(std::string name) : name(name) {}
 
 Zombie::~Zombie() { 

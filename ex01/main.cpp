@@ -6,15 +6,23 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:22:03 by mg                #+#    #+#             */
-/*   Updated: 2025/09/29 14:22:51 by mg               ###   ########.fr       */
+/*   Updated: 2025/09/29 14:59:01 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 int	main () {
-	Zombie z;
-	z.announce();
+	Zombie z1;
+	Zombie z2;
+	Zombie z3;
+
+
+	z1.announce();
+
+	z2.setName("setter");
+	z2.announce();
+
 
 	return 0;
 }
