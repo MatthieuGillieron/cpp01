@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 10:26:23 by mg                #+#    #+#             */
-/*   Updated: 2025/10/01 10:10:27 by mg               ###   ########.fr       */
+/*   Updated: 2025/10/01 11:07:27 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ HumanA::~HumanA(){}
 
 void	HumanA::attack () {
 
-	std::cout << name << "attacks with their " << weapon.getType() << std::endl;
+	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
 
 }
