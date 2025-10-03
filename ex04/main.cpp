@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:01:53 by mg                #+#    #+#             */
-/*   Updated: 2025/10/03 16:27:15 by mg               ###   ########.fr       */
+/*   Updated: 2025/10/03 16:52:04 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,34 @@
 // ofstream -> crée + ecrire
 // ifstream -> read only
 //
-// std::istream::peak() -> examine le char et le gare dans le flux :: peak() == EOF au start c'est que empty
+// std::istream::peak() -> examine le char et le gare dans le flux :: peak() == EOF au start c'est que empty voir .empty
 //
 
-int main(int, char **av) {
+int main(int , char **av) {
 	
-	//if (ac != 4)
+	// if (ac != 4)
 	//	return 0;
 	
-
-	std::string outputTest;
+ // apre cree un nouveau fihcier pour output
+	
+	std::string outputTest; 
 
 	std::ifstream myReadFile(av[1]);
-	while (std::getline(myReadFile, outputTest))
+
+	if (!myReadFile.is_open()) {
+		std::cout << "cannot open this file" << std::endl;
+		return -1;
+	}
+
+	if (myReadFile.peek() == EOF) {
+		std::cout << "File is empty" << std::endl;
+		return -1;
+	}
+
+	
+	while (std::getline(myReadFile, outputTest)) {
 		std::cout << outputTest << std::endl;
+	}
 
 	myReadFile.close();
-		
 }
