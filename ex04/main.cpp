@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:01:53 by mg                #+#    #+#             */
-/*   Updated: 2025/10/06 14:30:21 by mg               ###   ########.fr       */
+/*   Updated: 2025/10/06 15:12:42 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,34 +50,57 @@
 // std::istream::peak() -> examine le char et le gare dans le flux :: peak() == EOF au start c'est que empty voir .empty
 //
 
+
+
+
+
+
+
+int	parseFile(char *file) {
+
+	std::ifstream readFile(file);
+
+	if (!readFile.is_open()) {
+		std::cout << "Cannot open this file" << std::endl;
+		return -1;
+	}
+
+	if (readFile.peek() == EOF) {
+		std::cout << "File is empty !" << std::endl;
+		return -1;
+	}
+	return 0;
+}
+
+
+
+
+
 int main(int , char **av) {
 	
-	// if (ac != 4)
-	//	return 0;
+	// if (ac != 4) {
+	// 	std::cout << "exec: <filename> <s1> <s2>" << std::endl;
+	// 	return 0;
+	// }
 	
- // apre cree un nouveau fihcier pour output
+	
+	
+	parseFile(av[1]);
+	std::ifstream myReadFile(av[1]);
+	
+	std::string fileName = av[1];
+	std::ofstream createFile(fileName + ".replace");
 	
 	std::string outputTest; 
 
-	std::ifstream myReadFile(av[1]);
-
-	if (!myReadFile.is_open()) {
-		std::cout << "cannot open this file" << std::endl;
-		return -1;
-	}
-
-	if (myReadFile.peek() == EOF) {
-		std::cout << "File is empty" << std::endl;
-		return -1;
-	}
 
 	
 	while (std::getline(myReadFile, outputTest)) {
-		std::cout << outputTest << std::endl;
+		createFile << outputTest << "\n";
 	}
 
-	std::string fileName = av[1];
-	std::ofstream createFile(fileName + ".replace");
 
 	myReadFile.close();
 }
+
+
