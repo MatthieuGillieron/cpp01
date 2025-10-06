@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:01:53 by mg                #+#    #+#             */
-/*   Updated: 2025/10/06 15:12:42 by mg               ###   ########.fr       */
+/*   Updated: 2025/10/06 15:48:44 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,21 +86,21 @@ int main(int , char **av) {
 	
 	
 	parseFile(av[1]);
-	std::ifstream myReadFile(av[1]);
+	std::ifstream file(av[1]);
 	
 	std::string fileName = av[1];
 	std::ofstream createFile(fileName + ".replace");
 	
-	std::string outputTest; 
+	std::string line; 
 
 
 	
-	while (std::getline(myReadFile, outputTest)) {
-		createFile << outputTest << "\n";
+	while (std::getline(file, line)) {
+		createFile << line << "\n";
 	}
 
 
-	myReadFile.close();
+	file.close();
 }
 
 
