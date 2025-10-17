@@ -1,9 +1,9 @@
 
-#include <iostream>
-#include <string>
-
 #ifndef HARL_HPP
 #define HARL_HPP
+
+#include <iostream>
+#include <string>
 
 class Harl {
 
@@ -21,7 +21,7 @@ class Harl {
 
 	void	complain(std::string level);
 
-} ;
+};
 
 
 #endif
