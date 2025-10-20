@@ -6,28 +6,35 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:10:11 by mg                #+#    #+#             */
-/*   Updated: 2025/09/29 16:26:42 by mg               ###   ########.fr       */
+/*   Updated: 2025/10/20 14:48:35 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int main () {
+int main (int ac, char **av) {
 
-	std::string var("HI THIS IS BRAIN");
-	std::string* stringPTR = &var;
-	std::string& stringREF = var;
+	(void)av;
+	
+	if (ac == 1) {
 
-	std::cout << "adress var: " << &var << std::endl ;
-	std::cout << "adress stringPTR: " << &stringPTR << std::endl ;
-	std::cout << "adress stringREF: " << &stringREF << std::endl ;
-
-
-	std::cout << "value var: " << var << std::endl ;
-	std::cout << "value stringPTR: " << *stringPTR << std::endl ;
-	std::cout << "value stringREF: " << stringREF << std::endl ;
-
-	return 0;
+		std::string var("HI THIS IS BRAIN");
+		std::string* stringPTR = &var;
+		std::string& stringREF = var;
+		
+		std::cout << "adress var: " << &var << std::endl ;
+		std::cout << "adress stringPTR: " << &stringPTR << std::endl ;
+		std::cout << "adress stringREF: " << &stringREF << std::endl ;
+		
+		
+		std::cout << "value var: " << var << std::endl ;
+		std::cout << "value stringPTR: " << *stringPTR << std::endl ;
+		std::cout << "value stringREF: " << stringREF << std::endl ;
+		
+		return 0;
+	}
+	std::cout << "Write: ./exec" << std::endl;
+	return 1;
 }
 
 
